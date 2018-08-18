@@ -17,4 +17,15 @@ router.get("/", function(req, res) {
     });
 });
 
+// router.post("/api/cocktails", function(req, res) {
+//     cocktail.insertOne(function(data) {
+//         let hbsObject = {
+//             cocktail: data
+//         };
+//         console.log(hbsObject);
+//         res.render("index", hbsObject);
+//     });
+// });
+
+module.exports = router;
 

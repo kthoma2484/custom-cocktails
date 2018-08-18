@@ -1,6 +1,6 @@
 // Depenedencies------------
 
-let connection = require("./config/connection.js");
+let connection = require("./connection.js");
 
 // Helper function for SQL syntax.
 function printQuestionMarks(num) {
