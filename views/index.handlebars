@@ -1,0 +1,20 @@
+<h1>Custom Cocktails!</h1>
+
+<h2>What are you having?</h2>
+
+<ul>
+  {{#each cocktail}}
+  {{/each}}
+</ul>
+
+
+<h2>Add a Custom Cocktail</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="drink">Cocktail Name:</label>
+    <input type="text" id="drink" name="name">
+  </div>
+
+  <button type="submit">Drink it!</button>
+</form>
