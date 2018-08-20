@@ -5,9 +5,60 @@
 		<link rel="stylesheet" href="/assets/css/cocktail_style.css" type="text/css" />
 		<title>My Custom Cocktails!</title>
 		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="../models/cocktail.js"></script>
 	</head>
 	<body>
 		{{{ body }}}
+	
+	
+	
+<script>
+$(function() {
+  let newDrinkState = $(this).data("newdrinkstate");
+  
+  $(".change-drink-state").on("click", function(event) {
+    let id = $(this).data("id");
+    newDrinkState = "true";
+
+    let newDrunkenState = {
+      drunken: newDrinkState
+    };
+
+    // Send the PUT request.
+    $.ajax("/api/cocktails" + id, {
+      type: "PUT",
+      data: newDrunkenState
+    }).then(
+      function() {
+        console.log("changed drink state to "+ newDrinkState);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
+  $(".create-form").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    let newCocktail = {
+      drink_name: $("#drink").val().trim()
+    };
+
+    // Send the POST request.
+    $.ajax("/api/cocktails", {
+      type: "POST",
+      data: newCocktail
+    }).then(
+      function() {
+        console.log("created new drink");
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+});
+</script>
+	
 	</body>
 </html>
+

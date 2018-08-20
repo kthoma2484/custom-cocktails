@@ -4,6 +4,15 @@
 
 <ul>
   {{#each cocktail}}
+  <li>
+    {{drink_name}}
+   
+    <button class="change-drink-state" data-id="{{id}}" data-newdrinkstate="{{drunken}}">
+      Have a drink!
+    </button>
+    
+  </li>
+  <br>
   {{/each}}
 </ul>
 
@@ -18,3 +27,4 @@
 
   <button type="submit">Drink it!</button>
 </form>
+
