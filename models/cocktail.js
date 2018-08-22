@@ -10,8 +10,8 @@ let Cocktail = {
             cb(res);
         });
     },
-    instertOne: function(cols, vals, cb) {
-        orm.insertOne("cocktails", function(res) {
+    insertOne: function(cols, vals, cb) {
+        orm.insertOne("cocktails", cols, vals, function(res) {
             cb(res);
         })
     },

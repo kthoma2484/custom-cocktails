@@ -18,10 +18,9 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/cocktails", function(req, res) {
-    cocktails.insertOne(["name", "drunken"], [req.body.name, req.body.drunken], function(result) {
+    cocktails.insertOne(["drink_name", "drunken"], [req.body.drink_name, req.body.drunken], function(result) {
        
-    console.log(result);
-    res.send( { id: result.insertId });
+    res.json( { id: result.insertId });
     });
 });
 

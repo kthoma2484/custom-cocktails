@@ -59,6 +59,8 @@ let orm = {
             if (err) {
                 throw err;
             }
+
+            cb(result);
         })
     },
     updateOne: function(table, objColVals, condition, cb) {

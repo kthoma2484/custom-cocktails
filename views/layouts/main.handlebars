@@ -13,11 +13,10 @@
 	
 <script>
 $(function() {
-  let newDrinkState = $(this).data("newdrinkstate");
-  
+ 
   $(".change-drink-state").on("click", function(event) {
     let id = $(this).data("id");
-    newDrinkState = "true";
+    let newDrinkState = $(this).data("drinkstate", true);
 
     let newDrunkenState = {
       drunken: newDrinkState
@@ -41,7 +40,8 @@ $(function() {
     event.preventDefault();
 
     let newCocktail = {
-      drink_name: $("#drink").val().trim()
+      drink_name: $("#drink").val().trim(),
+      drunken: 0
     };
 
     // Send the POST request.
