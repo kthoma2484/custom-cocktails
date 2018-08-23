@@ -6,14 +6,14 @@ let connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "cocktails_db"
+    database: "cocktails_db",
 })
 
 // Make connection
 connection.connect(function(err){
     if (err) {
         throw err;
-        return;
+      //  return;
     }
     console.log("connection as id " + connection.threadId)
 })
