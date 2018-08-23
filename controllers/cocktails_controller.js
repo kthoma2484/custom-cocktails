@@ -29,7 +29,7 @@ router.put("/api/cocktails/:id", function(req, res) {
   
     console.log("consumed", consumed);
   
-    cocktails.update({
+    cocktails.updateOne({
       drunken: req.body.drunken
     }, consumed, function(result) {
       if (result.changedRows == 0) {

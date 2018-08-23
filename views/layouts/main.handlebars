@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/assets/css/cocktail_style.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/cocktail_style.css" type="text/css" />
 		<title>My Custom Cocktails!</title>
 		<script src="https://code.jquery.com/jquery.js"></script>
-	</head>
+	
+  </head>
 	<body>
 		{{{ body }}}
 	
@@ -13,26 +15,28 @@
 	
 <script>
 $(function() {
- 
   $(".change-drink-state").on("click", function(event) {
     let id = $(this).data("id");
-    let newDrinkState = $(this).data("drinkstate", true);
+    let newDrinkState = $(this).data("drinkstate");
 
     let newDrunkenState = {
-      drunken: newDrinkState
+      drunken: true
     };
 
     // Send the PUT request.
-    $.ajax("/api/cocktails" + id, {
+    $.ajax("/api/cocktails/" + id, {
       type: "PUT",
       data: newDrunkenState
     }).then(
       function() {
-        console.log("changed drink state to "+ newDrinkState);
+        //console.log("changed drink state to "+ newDrinkState);
+
         // Reload the page to get the updated list
         location.reload();
       }
     );
+
+
   });
 
   $(".create-form").on("submit", function(event) {
@@ -50,7 +54,7 @@ $(function() {
       data: newCocktail
     }).then(
       function() {
-        console.log("created new drink");
+        // alert("created new drink");
         // Reload the page to get the updated list
         location.reload();
       }
