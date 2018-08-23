@@ -8,7 +8,7 @@
     <h2>What are you having?</h2>
     <ul>
       {{#each cocktail}}
-     
+      {{#unless drunken}}
       <li>
         {{drink_name}}
         <br>
@@ -17,27 +17,25 @@
         </button>
       </li>
       <br>
-      
+      {{/unless}}
       {{/each}}
     </ul>
   </div>
 
    <div class="col-sm-3 drinks-drunken">
-    <h3>
-      Drinks on you tab!
-    </h3>
+    <h3>Drinks on you tab!</h3>
     <ul>
       {{#each cocktail}}
-      
+      {{#if drunken}}
       <li>
         {{drink_name}}
         <br>
         <button class="change-drink-state" data-id="{{id}}" data-drinkstate="{{drunken}}">
           Have a drink!
         </button>
-       
       </li>
       <br>
+      {{/if}}
       {{/each}}
     </ul>
   </div>
