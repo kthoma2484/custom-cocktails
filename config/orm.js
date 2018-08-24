@@ -33,7 +33,7 @@ function objToSql(ob) {
 
 // Methods to excute MySQL commands
 let orm = {
-    selectAll: function(tableInput, cb) {
+    selectAll: function (tableInput, cb) {
         let queryString = "SELECT * FROM " + tableInput + ";";
 
         connection.query(queryString, function (err, result) {
@@ -43,7 +43,7 @@ let orm = {
             cb(result);
         });
     },
-    insertOne: function(table, cols, vals, cb) {
+    insertOne: function (table, cols, vals, cb) {
         let queryString = "INSERT INTO " + table;
 
         queryString += " (";
@@ -63,7 +63,7 @@ let orm = {
             cb(result);
         })
     },
-    updateOne: function(table, objColVals, condition, cb) {
+    updateOne: function (table, objColVals, condition, cb) {
         let queryString = "UPDATE " + table;
 
         queryString += " SET ";
@@ -73,11 +73,22 @@ let orm = {
 
         console.log(queryString);
 
-        connection.query(queryString, function(err, result) {
+        connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }
 
+            cb(result);
+        });
+    },
+    reset: function (table, cb) {
+        let queryString = "UPDATE " + table + " SET drunken = 0;";
+        console.log('orm.js reset function called');
+        console.log("table is " + table);
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                return;
+            }
             cb(result);
         });
     }

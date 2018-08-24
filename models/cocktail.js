@@ -19,6 +19,12 @@ let Cocktail = {
         orm.updateOne("cocktails", objColVals, condition, function(res) {
             cb(res);
         });
+    },
+    reset: function(cb) {
+       console.log('cocktails.js reset function called');
+        orm.reset("cocktails", function(res) {
+            cb(res);
+        })
     }
 };
 

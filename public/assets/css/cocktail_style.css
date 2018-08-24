@@ -48,3 +48,9 @@ h2,
 h3 {
     font-family: 'cursive';
 }
+
+.lower-row {
+    display: flex;
+    flex: 1;
+    margin: 10px 130px;
+}

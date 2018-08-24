@@ -36,7 +36,6 @@ $(function() {
       }
     );
 
-
   });
 
   $(".create-form").on("submit", function(event) {
@@ -60,7 +59,34 @@ $(function() {
       }
     );
   });
+
+ $(".clear-tab").on("click", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+   
+    let id = $('.change-drink-state').data("id");
+    let newDrinkState = $('.change-drink-state').data("drinkstate");
+
+    //let tabButton = $("button").data("drinkstate");
+    
+     let newDrunkenState = {
+      drunken: false
+    };
+
+    // Send the POST request.
+    $.ajax("/api/cocktails/reset", {
+      type: "PUT",
+      data: newDrunkenState
+    }).then(
+      function() {
+
+        location.reload();
+      }
+    );
+  });
+
 });
+
 </script>
 	
 	</body>
