@@ -4,7 +4,7 @@ USE cocktails_db;
 
 CREATE TABLE cocktails (
     id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR (255) NOT NULL,
+    drink_name VARCHAR (255) NOT NULL,
     drunken BOOLEAN DEFAULT false,
     PRIMARY KEY (id)
 );
