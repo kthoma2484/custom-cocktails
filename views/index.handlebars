@@ -29,12 +29,10 @@
       {{#if drunken}}
       <li>
         {{drink_name}}
-        <br>
-        <button class="change-drink-state" data-id="{{id}}" data-drinkstate="{{drunken}}">
+        <button class="change-drink-state hidden" data-id="{{id}}" data-drinkstate="{{drunken}}">
           Have a drink!
         </button>
       </li>
-      <br>
       {{/if}}
       {{/each}}
     </ul>

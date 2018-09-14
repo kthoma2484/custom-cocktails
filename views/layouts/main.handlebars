@@ -23,8 +23,6 @@ $(function() {
       drunken: true
     };
 
-    $(this).addClass("hidden");
-
     // Send the PUT request.
     $.ajax("/api/cocktails/" + id, {
       type: "PUT",
@@ -35,11 +33,11 @@ $(function() {
 
         // Reload the page to get the updated list
         location.reload();
+
       }
     );
 
-    $(".change-drink-state[data-id= "+ id + "]").addClass("hidden");
-    console.log("the id is " + id)
+
   });
 
   $(".create-form").on("submit", function(event) {
