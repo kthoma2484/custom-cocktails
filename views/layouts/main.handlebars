@@ -23,6 +23,8 @@ $(function() {
       drunken: true
     };
 
+    $(this).addClass("hidden");
+    
     // Send the PUT request.
     $.ajax("/api/cocktails/" + id, {
       type: "PUT",

@@ -8,6 +8,7 @@ let cocktails = require("../models/cocktail.js");
 let router = express.Router();
 
 router.get("/", function (req, res) {
+  console.log("getting to router");
   cocktails.selectAll(function (data) {
     let hbsObject = {
       cocktail: data

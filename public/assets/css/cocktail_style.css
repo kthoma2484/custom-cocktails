@@ -54,3 +54,7 @@ h3 {
     flex: 1;
     margin: 10px 130px;
 }
+
+.hidden {
+    visibility: hidden;
+}
