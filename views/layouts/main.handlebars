@@ -38,8 +38,7 @@ $(function() {
       }
     );
 
-    ($(".drinks-drunken").children("button").addClass("hidden"));
-
+    $(".change-drink-state[data-id= "+ id + "]").addClass("hidden");
   });
 
   $(".create-form").on("submit", function(event) {
